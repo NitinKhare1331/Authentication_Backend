@@ -2,6 +2,7 @@ import express from 'express';
 import { PORT } from './config/serverConfig.js';
 import connectDB from './config/dbConfig.js';
 import userRouter from './routes/userRouter.js'
+import { StatusCodes } from 'http-status-codes';
 
 const app = express();
 
@@ -16,5 +17,5 @@ app.get('/ping', (req, res) => {
 
 app.listen(PORT ,() => {
     console.log(`Server is running on port ${PORT}`);
-    connectDB()
+    connectDB();
 })
